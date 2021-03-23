@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap");
+:root {
+  --bg-color: rgb(45, 64, 70);
+  --av-stroke-color: deepskyblue;
+  --av-text-color: deepskyblue;
+  --av-flash-color: white;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 3rem;
+  background-color: var(--bg-color);
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
+}
+.avatar img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  animation: avatar-image 4s ease-out infinite;
+}
+.avatar .title {
+  margin: 0;
+  padding: 0 0 0.5rem;
+  background: linear-gradient(rgb(224, 247, 255), deepskyblue);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-align: center;
+  line-height: 1;
+  font-size: 3.6rem;
+}
+@keyframes avatar-image {
+  0% {
+    box-shadow: 0 0 0 0.5rem var(--bg-color), 0 0 0 1rem var(--av-stroke-color);
+  }
+  81% {
+    filter: brightness(1);
+  }
+  83% {
+    filter: brightness(2);
+    box-shadow: 0 0 0 0.5rem var(--bg-color), 0 0 0 1rem var(--av-stroke-color);
+  }
+  85% {
+    filter: brightness(1);
+    box-shadow: 0 0 0 0.5rem var(--av-flash-color),
+      0 0 0 1rem var(--av-stroke-color);
+  }
+  90% {
+    box-shadow: 0 0 0 0.5rem var(--bg-color), 0 0 0 1rem var(--av-flash-color);
+  }
+  100% {
+    box-shadow: 0 0 0 0.5rem var(--bg-color), 0 0 0 1rem var(--av-stroke-color);
+  }
+}
